@@ -1,5 +1,4 @@
 {
-    "name": "vercel-server",
     "version": 2,
     "routes": [
         {
