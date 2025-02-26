@@ -3,7 +3,7 @@
     "routes": [
         {
             "src": "/api/(.*)",
-            "dest": "/api/getOpenId.js"
+            "dest": "/api/index.js"
         }
     ]
 }
