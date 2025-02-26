@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "api/index.js",
   "scripts": {
-    "start": "node api/getOpenId.js"
+    "start": "node api/index.js"
   },
   "keywords": [],
   "author": "",
