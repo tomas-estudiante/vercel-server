@@ -1,0 +1,142 @@
+.wrapper {
+    position: relative;
+    width: 100%
+}
+
+.banner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    min-width: 1200px;
+    height: 567px;
+    background: url("../images/banner.jpg") top center repeat-x #1b66e6;
+    overflow: hidden
+}
+
+.banner:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    height: 88px;
+    background: url("../images/banner-wave.png") no-repeat center bottom;
+    background-size: 100% 100%
+}
+
+.header {
+    width: 100%;
+    height: 70px;
+    background-color: rgba(0,0,0,0.1)
+}
+
+.searchmain {
+    width: 1090px;
+    min-height: 330px;
+    margin: 0 auto;
+    clear: both
+}
+
+.searchmain .page-title {
+    height: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.searchmain .page-title img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.searchmain .search-tab-content {
+    display: none;
+    position: relative;
+    margin-left: 120px
+}
+
+.searchmain .search-tab-content.cur {
+    display: block
+}
+
+.searchmain .input-box {
+    position: relative;
+    width: 849px;
+    margin-bottom: 24px;
+    padding-bottom: 36px;
+    border-radius: 4px;
+    background: #fff;
+    -webkit-box-shadow: -0.07px 2px 4px 0px rgba(0,0,0,0.3608);
+    -moz-box-shadow: -0.07px 2px 4px 0px rgba(0,0,0,0.3608);
+    -ms-box-shadow: -0.07px 2px 4px 0px rgba(0,0,0,0.3608);
+    -o-box-shadow: -0.07px 2px 4px 0px rgba(0,0,0,0.3608);
+    box-shadow: -0.07px 2px 4px 0px rgba(0,0,0,0.3608)
+}
+
+.searchmain .input-box.fullinput .search-input {
+    width: 615px
+}
+
+.searchmain .input-box.fullinput .reopt {
+    display: none
+}
+
+.searchmain .input-box .search-input-wrap {
+    position: relative;
+    float: left;
+    width: calc(100% - 140px);
+    padding: 12px 0px
+}
+
+.searchmain .input-box .search-input-wrap .search-input {
+    margin-top: 5px;
+    width: 100%;
+    padding: 0 10px;
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+    border: none;
+    background-color: transparent
+}
+
+.searchmain .input-box .search-btn {
+    position: absolute;
+    right: 7px;
+    bottom: 6px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 2px;
+    border: none;
+    outline: none;
+    background-color: #3662ec;
+    cursor: pointer;
+    width: 80px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 4px
+}
+
+.searchmain .input-box .search-btn:hover {
+    background-color: #204fe1
+}
+
+.searchmain .input-box .search-btn i {
+    width: 16px;
+    height: 16px;
+    background-position: 0 -1915px;
+    vertical-align: top;
+    margin-top: 9px;
+    margin-right: 3px
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden
+}

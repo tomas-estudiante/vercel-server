@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>检索-PSA</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/search.css">
+</head>
+
+<body>
+    <div id="ModuleHeader"></div>
+    <div class="module-main">
+        <div id="ModuleSearch">
+            <div>
+                <div class="search-box">
+                    <div class="content">
+                        <div class="search-left">
+
+                            <!--data-classify-->
+                        </div>
+                        <!--search-left-->
+                        <div class="search-main">
+                            <div class="input-box">
+                                <span class="btn-clear" id="clearBtn" style="display: inline;">×</span>
+                                <input id="txt_search" class="search-input" type="text" autocomplete="off"
+                                    placeholder="请输入检索内容" maxlength="150" value="" searchword="" aria-label="请输入检索内容">
+                                <input class="search-btn" type="button" value="" id="btn_search">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="module-wrap-content wrap-content">
+            <div class="module-wrap-aside main">
+                <div id="ModuleSearchResult">
+                    <div id="briefBox">
+                        <div>
+                            <div id="main-content">
+                                <div id="result-container" class="search-result">
+                                    <!-- 搜索结果将通过 JavaScript 动态插入到这里 -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/search.js"></script>
+</body>
+
+</html>

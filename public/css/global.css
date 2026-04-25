@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+html,body,div,span,iframe,h1,h2,h3,h4,h5,h6,p,pre,a,em,font,img,small,strong,b,u,i,s,dl,dt,dd,ol,ul,li,fieldset,form,label,input,table,tr,td {
+    padding: 0px;
+    margin: 0px
+}
+
+textarea {
+    resize: none;
+    overflow: auto;
+    line-height: 18px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none
+}
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+i {
+    font-style: normal
+}
+
+img {
+    border: none
+}
+
+body,button,input,select,textarea {
+    font: 12px/150% Arial, "Microsoft YaHei", "宋体", serif;
+    color: #333;
+    outline: 0
+}
+
+body {
+    width: 100%;
+    min-width: 1200px;
+    font-family: "Microsoft yahei";
+    background-color: #fff
+}
+
+header,footer,article,section,nav,menu,hgroup {
+    display: block
+}
+
+html {
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: scroll
+}
+
+header {
+    position: relative;
+    z-index: 10;
+    margin-bottom: 30px
+}
+
+header .mask-bg {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-width: 1200px;
+    height: 100vh;
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden
+}
