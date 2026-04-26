@@ -170,46 +170,55 @@ function renderTable(list) {
 }
 
 /**
-         * 复制图片的主函数
-         * @param {string} imageUrl - 图片的 URL 地址
-         */
-async function copyImage(imageUrl) {
-    try {
-        // 1. 创建 Image 对象并加载图片
-        const img = new Image();
-        // 关键：设置跨域属性，防止 canvas 污染（Tainted Canvas）
-        img.crossOrigin = "Anonymous";
+ * 复制图片到剪贴板的函数
+ * @param {string} imageUrl - 原始图片的 URL
+ * @param {string} vercelDomain - 你的 Vercel 项目域名 (例如: https://your-project.vercel.app)
+ * @returns {Promise<boolean>}
+ */
+async function copyImageToClipboard(imageUrl, vercelDomain = 'https://vercel-server-kappa.vercel.app') {
+  const controller = new AbortController();
 
-        img.src = imageUrl;
+  try {
+    // 1. 使用 Vercel 代理接口获取图片
+    // 构造代理 URL: /api/proxy-image?url=原始图片地址
+    const proxyUrl = new URL('/api/proxy-image', vercelDomain);
+    proxyUrl.searchParams.append('url', imageUrl);
 
-        // 等待图片加载完成
-        await new Promise((resolve, reject) => {
-            img.onload = resolve;
-            img.onerror = reject;
-        });
+    console.log('正在从代理获取图片:', proxyUrl.toString());
 
-        // 2. 创建 Canvas 并绘制图片
-        const canvas = document.createElement('canvas');
-        canvas.width = img.naturalWidth;
-        canvas.height = img.naturalHeight;
-        const ctx = canvas.getContext('2d');
-        ctx.drawImage(img, 0, 0);
+    const response = await fetch(proxyUrl, {
+      signal: controller.signal,
+      // 必须设置 mode: 'cors'，即使服务端允许了，前端也要声明
+      mode: 'cors' 
+    });
 
-        // 3. 将 Canvas 内容转换为 Blob (PNG 格式兼容性最好)
-        const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
-
-        // 4. 使用 Clipboard API 写入剪贴板
-        // 必须包含在用户手势事件（如点击）中才能生效
-        await navigator.clipboard.write([
-            new ClipboardItem({
-                [blob.type]: blob
-            })
-        ]);
-
-        alert('✅ 图片已复制到剪贴板！你可以去微信或文档里粘贴了。');
-
-    } catch (err) {
-        console.error('复制失败:', err);
-        alert('❌ 复制失败，请检查控制台报错。常见原因：图片跨域限制或非 HTTPS 环境。');
+    if (!response.ok) {
+      throw new Error(`Network response was not ok: ${response.status}`);
     }
+
+    // 2. 将响应转换为 Blob
+    const blob = await response.blob();
+
+    // 3. 使用 Clipboard API 写入剪贴板
+    // 注意：这需要用户手势触发（如点击按钮），且需要 HTTPS 环境
+    await navigator.clipboard.write([
+      new ClipboardItem({
+        [blob.type]: blob
+      })
+    ]);
+
+    console.log('图片已成功复制到剪贴板！');
+    return true;
+
+  } catch (err) {
+    if (err.name === 'AbortError') {
+      console.log('Fetch aborted');
+    } else if (err.name === 'NotAllowedError') {
+      alert('浏览器拒绝了剪贴板访问权限。请确保是在安全上下文(HTTPS)下运行，并且是由用户点击触发的。');
+    } else {
+      console.error('复制图片失败:', err);
+      alert('复制失败: ' + err.message);
+    }
+    return false;
+  }
 }
