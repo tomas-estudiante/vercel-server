@@ -49,10 +49,12 @@ txtSearch.addEventListener('input', function () {
     }
 });
 
+// --- 搜索功能 ---
 const searchBtn = document.getElementById('btn_search');
 searchBtn.addEventListener('click', function () {
     const searchText = document.getElementById('txt_search').value;
     doSearch(searchText);
+    setParam(searchText); // 更新 URL 中的 searchText 参数
 });
 txtSearch.addEventListener('keydown', function (event) {
     // 判断按下的键是否是 "Enter"
@@ -62,9 +64,14 @@ txtSearch.addEventListener('keydown', function (event) {
         event.preventDefault();
         const searchText = document.getElementById('txt_search').value;
         doSearch(searchText); // 触发搜索
+        setParam(searchText); // 更新 URL 中的 searchText 参数
     }
 });
-// --- 搜索功能 ---
+// 更新 URL 中的 searchText 参数
+function setParam(searchText) {
+    const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?searchText=' + encodeURIComponent(searchText);
+    window.history.pushState({ path: newUrl }, '', newUrl);
+}
 /**
 * 核心搜索函数
 * @param {string} searchText - 用户输入的检索词
@@ -102,7 +109,6 @@ function doSearch(searchText) {
             container.innerHTML = '<p class="no-result">⚠️ 数据加载失败。请确保你是在服务器环境（如 Live Server）下运行，而不是直接打开文件。</p>';
         });
 }
-
 /**
  * 根据数据渲染表格
  * @param {Array} list - 过滤后的数据数组
@@ -139,7 +145,7 @@ function renderTable(list) {
                     <td class="author">${item.author}</td>
                     <td class="source">${item.source}</td>
                     <td class="data">${item.database}</td>
-                    <td class="operat"><button class="btn-quote" onclick="alert('引用了：${item.title}')">引用</button></td>
+                    <td class="operat"><button class="btn-quote" onclick="copyImage('${item.url}')">复制</button></td>
                 </tr>
             `;
             return; // 跳过后续文本数据的渲染
@@ -164,16 +170,46 @@ function renderTable(list) {
 }
 
 /**
- * 绑定按钮点击事件的处理函数
- */
-function handleSearch() {
-    const inputVal = document.getElementById('txt_search').value;
-    doSearch(inputVal);
-}
+         * 复制图片的主函数
+         * @param {string} imageUrl - 图片的 URL 地址
+         */
+async function copyImage(imageUrl) {
+    try {
+        // 1. 创建 Image 对象并加载图片
+        const img = new Image();
+        // 关键：设置跨域属性，防止 canvas 污染（Tainted Canvas）
+        img.crossOrigin = "Anonymous";
 
-// 可选：添加回车键监听
-document.getElementById('txt_search').addEventListener('keyup', function (e) {
-    if (e.key === 'Enter') {
-        handleSearch();
+        img.src = imageUrl;
+
+        // 等待图片加载完成
+        await new Promise((resolve, reject) => {
+            img.onload = resolve;
+            img.onerror = reject;
+        });
+
+        // 2. 创建 Canvas 并绘制图片
+        const canvas = document.createElement('canvas');
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+
+        // 3. 将 Canvas 内容转换为 Blob (PNG 格式兼容性最好)
+        const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+
+        // 4. 使用 Clipboard API 写入剪贴板
+        // 必须包含在用户手势事件（如点击）中才能生效
+        await navigator.clipboard.write([
+            new ClipboardItem({
+                [blob.type]: blob
+            })
+        ]);
+
+        alert('✅ 图片已复制到剪贴板！你可以去微信或文档里粘贴了。');
+
+    } catch (err) {
+        console.error('复制失败:', err);
+        alert('❌ 复制失败，请检查控制台报错。常见原因：图片跨域限制或非 HTTPS 环境。');
     }
-});
+}

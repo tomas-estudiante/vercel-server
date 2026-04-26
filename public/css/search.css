@@ -107,7 +107,7 @@ input[type="text"],input[type="password"],button {
 
 .module-wrap-content {
     display: table;
-    width: 1200px;
+    width: 940px;
     margin: 0 auto;
 }
 
@@ -124,7 +124,6 @@ input[type="text"],input[type="password"],button {
     display: table-cell;
     vertical-align: top;
 }
-
 .main {
     margin-top: 71px;
     background-color: #fff;
