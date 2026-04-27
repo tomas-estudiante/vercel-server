@@ -86,28 +86,70 @@ function doSearch(searchText) {
         return;
     }
 
-    // 使用 fetch 获取 data 文件夹下的 json 数据
-    fetch('data/data.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("网络响应错误");
-            }
-            return response.json();
-        })
-        .then(data => {
-            // 1. 过滤数据：查找 tags 数组中包含关键词的条目
-            const filteredData = data.filter(item => {
-                // 检查 tags 数组中是否有任意一个标签包含关键词
-                return item.tags.some(tag => tag.toLowerCase().includes(keyword));
-            });
 
-            // 2. 渲染结果
-            renderTable(filteredData);
-        })
-        .catch(error => {
-            console.error('获取数据失败:', error);
-            container.innerHTML = '<p class="no-result">⚠️ 数据加载失败。请确保你是在服务器环境（如 Live Server）下运行，而不是直接打开文件。</p>';
+    // 同时加载数据源和关联词库
+    Promise.all([
+        fetch('data/data.json').then(res => res.json()),
+        fetch('data/associated.json').then(res => res.json())
+    ])
+    .then(([mainData, associatedData]) => {
+        // 1. 确定最终要搜索的关键词列表
+        let searchKeywords = [keyword]; // 默认只搜用户输入的词
+
+        // 在关联词库中查找是否有匹配的组
+        // 逻辑：检查用户输入的词，是否是某个组的 main 或者 related 中的词
+        const matchedGroup = associatedData.find(group => {
+            // 检查主关键词
+            if (group.main.toLowerCase() === keyword) return true;
+            // 检查关联词数组
+            return group.related.some(rel => rel.toLowerCase() === keyword);
         });
+
+        // 如果找到了对应的组，构建包含“主词+所有关联词”的搜索列表
+        if (matchedGroup) {
+            // 组合：主词 + 所有关联词 (去重)
+            searchKeywords = [matchedGroup.main, ...matchedGroup.related].map(k => k.toLowerCase());
+            console.log(`命中关联词组，扩展搜索词：${searchKeywords.join(', ')}`);
+        }
+
+        // 2. 过滤主数据
+        const filteredData = mainData.filter(item => {
+            // 只要 item 的 tags 中包含 searchKeywords 中的任意一个，就算匹配
+            return item.tags.some(tag => {
+                const currentTag = tag.toLowerCase();
+                return searchKeywords.some(k => currentTag.includes(k));
+            });
+        });
+
+        // 3. 渲染结果
+        renderTable(filteredData);
+    })
+    .catch(error => {
+        console.error('数据加载失败:', error);
+        container.innerHTML = '<p class="no-result">⚠️ 数据加载失败。请确保你是在服务器环境（如 Live Server）下运行。</p>';
+    });
+    // // 使用 fetch 获取 data 文件夹下的 json 数据
+    // fetch('data/data.json')
+    //     .then(response => {
+    //         if (!response.ok) {
+    //             throw new Error("网络响应错误");
+    //         }
+    //         return response.json();
+    //     })
+    //     .then(data => {
+    //         // 1. 过滤数据：查找 tags 数组中包含关键词的条目
+    //         const filteredData = data.filter(item => {
+    //             // 检查 tags 数组中是否有任意一个标签包含关键词
+    //             return item.tags.some(tag => tag.toLowerCase().includes(keyword));
+    //         });
+
+    //         // 2. 渲染结果
+    //         renderTable(filteredData);
+    //     })
+    //     .catch(error => {
+    //         console.error('获取数据失败:', error);
+    //         container.innerHTML = '<p class="no-result">⚠️ 数据加载失败。请确保你是在服务器环境（如 Live Server）下运行，而不是直接打开文件。</p>';
+    //     });
 }
 /**
  * 根据数据渲染表格
