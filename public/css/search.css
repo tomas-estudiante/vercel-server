@@ -107,7 +107,7 @@ input[type="text"],input[type="password"],button {
 
 .module-wrap-content {
     display: table;
-    width: 940px;
+    width: 650px;
     margin: 0 auto;
 }
 
@@ -192,7 +192,7 @@ table {
     background-color: #f6f8fa;
 }
 
-.result-table-list tbody .name {
+.result-table-list tbody .title {
     font-size: 14px;
     text-align: left;
     letter-spacing: .5px;
@@ -201,22 +201,28 @@ table {
 }
 
 .result-table-list tbody .pic{
-    width: 50px;
     height: 50px;
     object-fit: cover;
 }
 
-.result-table-list .name a {
+.result-table-list .title a {
     color: #000;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.result-table-list .title a:hover {
+    color: #53a2e3;
+    text-decoration: none;
 }
 
 .result-table-list .author,.result-table-list .tutor {
-    width: 12%;
+    width: 20%;
     color: #444;
 }
 
 .result-table-list .source {
-    width: 13%;
+    width: 20%;
     color: #444;
 }
 
@@ -226,7 +232,7 @@ table {
 }
 
 .result-table-list .data {
-    width: 8%;
+    width: 15%;
     text-align: center;
 }
 
