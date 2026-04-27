@@ -30,7 +30,7 @@
 .header {
     width: 100%;
     height: 70px;
-    background-color: rgba(0,0,0,0.1)
+    background-color: rgba(0, 0, 0, 0.1)
 }
 
 .searchmain {
@@ -69,11 +69,11 @@
     padding-bottom: 36px;
     border-radius: 4px;
     background: #fff;
-    -webkit-box-shadow: -0.07px 2px 4px 0px rgba(0,0,0,0.3608);
-    -moz-box-shadow: -0.07px 2px 4px 0px rgba(0,0,0,0.3608);
-    -ms-box-shadow: -0.07px 2px 4px 0px rgba(0,0,0,0.3608);
-    -o-box-shadow: -0.07px 2px 4px 0px rgba(0,0,0,0.3608);
-    box-shadow: -0.07px 2px 4px 0px rgba(0,0,0,0.3608)
+    -webkit-box-shadow: -0.07px 2px 4px 0px rgba(0, 0, 0, 0.3608);
+    -moz-box-shadow: -0.07px 2px 4px 0px rgba(0, 0, 0, 0.3608);
+    -ms-box-shadow: -0.07px 2px 4px 0px rgba(0, 0, 0, 0.3608);
+    -o-box-shadow: -0.07px 2px 4px 0px rgba(0, 0, 0, 0.3608);
+    box-shadow: -0.07px 2px 4px 0px rgba(0, 0, 0, 0.3608)
 }
 
 .searchmain .input-box.fullinput .search-input {
@@ -139,4 +139,176 @@
     clear: both;
     height: 0;
     visibility: hidden
+}
+
+.recommend {
+    padding-bottom: 50px;
+    overflow: hidden;
+    background: #f6f9fe;
+    box-sizing: border-box;
+    margin-top: 200px
+}
+
+.recommend .wrap {
+    width: 100%;
+    max-width: 1280px;
+    min-width: 1200px;
+    margin: 0 auto;
+}
+
+.wrap-title {
+    padding: 30px 0 30px 0;
+    text-align: center;
+    font-weight: normal;
+    position: relative
+}
+
+.wrap-title i {
+    display: block;
+    font-size: 36px;
+    line-height: 36px;
+    color: rgba(164,180,208,0.2)
+}
+
+.wrap-title span {
+    display: block;
+    margin-top: -15px;
+    font-size: 24px;
+    line-height: 24px;
+    color: #323232
+}
+
+.wrap-title span:before,.wrap-title span:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 51px;
+    border-top: 1px solid rgba(176,183,245,0.5)
+}
+
+.wrap-title span:before {
+    margin-right: 15px
+}
+
+.wrap-title span:after {
+    margin-left: 15px
+}
+
+.recommend-wrap {
+    width: 100%;
+    display: none;
+    box-sizing: border-box;
+    animation: fadeIn 0.4s ease;
+    display: flex;
+    justify-content: center;
+}
+
+.recommend-content {
+    display: inline-block;
+    width: 35%;
+    border-radius: 4px;
+    padding: 16px 20px 20px 20px;
+    background-color: #fff;
+    box-sizing: border-box
+}
+
+.article-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 16px;
+    height: 47px
+}
+
+.date-badge {
+    flex: 0 0 50px;
+    margin-right: 5px
+}
+
+.date-month {
+    font-size: 14px;
+    line-height: 22px;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    color: #f26d00;
+    text-decoration-color: #f26d00;
+    display: block
+}
+
+.date-year {
+    display: block;
+    font-size: 12px;
+    margin-left: 5px;
+    line-height: 21px;
+    color: #676a73
+}
+
+.article-content {
+    flex: 1;
+    min-width: 0
+}
+
+.article-title {
+    cursor: pointer;
+    font-family: PingFang SC;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 22px;
+    color: #1d2026;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.article-title:hover {
+    color: #3b82f6
+}
+
+.article-title a{
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+}
+
+.article-item .title-link {
+    color: #1d2026;
+    text-decoration: none
+}
+
+.article-item .title-link:hover {
+    color: #2f8bd6
+}
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    font-family: "PingFang SC", -apple-system, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 21px;
+    color: #676a73;
+    margin-top: 2px;
+    width: 100%
+}
+
+.article-meta .article-authors {
+    position: relative;
+    padding-right: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 5px
+}
+
+.show-more {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    color: #2f8bd6;
+    cursor: pointer;
+}
+
+#more-history {
+    display: none;
 }

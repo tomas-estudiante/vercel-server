@@ -28,3 +28,26 @@ searchInput.addEventListener('keydown', function(event) {
         doSearch(); // 触发搜索
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.getElementById('show-more-btn');
+    const historyList = document.getElementById('more-history');
+
+    // 绑定点击事件
+    btn.addEventListener('click', function(e) {
+      // 阻止 <a> 标签的默认跳转行为（虽然 href 是 void(0)，但这是一种好习惯）
+      e.preventDefault();
+
+      if (historyList.style.display === 'block') {
+        // 如果是展开状态，则收起
+        historyList.style.display = 'none';
+        btn.innerHTML = '显示更多历史版本';
+        btn.style.backgroundColor = '#f8f9fa'; // 恢复背景色
+      } else {
+        // 如果是收起状态，则展开
+        historyList.style.display = 'block';
+        btn.innerHTML = '收起历史版本';
+        btn.style.backgroundColor = '#e2e6ea'; // 按下状态深色背景
+      }
+    });
+  });
