@@ -1,7 +1,7 @@
 [
     {
         "main":"俞仲遥",
-        "related":["会长","yzy"]
+        "related":["会长","yzy","俞老板","俞总"]
     },
     {
         "main":"郭柃彤",
@@ -18,5 +18,37 @@
     {
         "main":"汤铭萱",
         "related":["主席","tmxx","汤老板","tmx"]
+    },
+    {
+        "main":"史致远",
+        "related":["史老板","小史","szy"]
+    },
+    {
+        "main":"谢家骏",
+        "related":["蟹老板","小谢","xjj","jiajia骏"]
+    },
+    {
+        "main":"郭浩哲",
+        "related":["郭老板","ghz"]
+    },
+    {
+        "main":"王政皓",
+        "related":["王老板","wzh"]
+    },
+    {
+        "main":"陈罗成",
+        "related":["罗哥","clc"]
+    },
+    {
+        "main":"胡张勤",
+        "related":["张勤哥","hzq"]
+    },
+    {
+        "main":"黄琛",
+        "related":["琛姐","hc"]
+    },
+    {
+        "main":"李彦",
+        "related":["彦哥","ly"]
     }
 ]

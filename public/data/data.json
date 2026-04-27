@@ -4,7 +4,9 @@
     "author": "刘子贺",
     "source": "psa24打工人",
     "database": "图片",
-    "tags": ["刘子贺"],
+    "tags": [
+      "刘子贺"
+    ],
     "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000208.jpg"
   },
   {
@@ -12,7 +14,9 @@
     "author": "王鑫盛",
     "source": "psa24打工人",
     "database": "图片",
-    "tags": ["王鑫盛"],
+    "tags": [
+      "王鑫盛"
+    ],
     "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/%E5%9B%BE%E7%89%871.png"
   },
   {
@@ -20,7 +24,9 @@
     "author": "俞仲遥",
     "source": "psa24打工人",
     "database": "图片",
-    "tags": ["俞仲遥"],
+    "tags": [
+      "俞仲遥"
+    ],
     "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427012820.jpg"
   },
   {
@@ -28,7 +34,9 @@
     "author": "李彦",
     "source": "psa24打工人",
     "database": "图片",
-    "tags": ["李彦"],
+    "tags": [
+      "李彦"
+    ],
     "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000034.jpg"
   },
   {
@@ -36,7 +44,9 @@
     "author": "郭柃彤",
     "source": "psa24打工人",
     "database": "图片",
-    "tags": ["郭柃彤"],
+    "tags": [
+      "郭柃彤"
+    ],
     "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000014.jpg"
   },
   {
@@ -44,7 +54,9 @@
     "author": "汤铭萱",
     "source": "psa24打工人",
     "database": "图片",
-    "tags": ["汤铭萱"],
+    "tags": [
+      "汤铭萱"
+    ],
     "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000140.jpg"
   },
   {
@@ -52,7 +64,9 @@
     "author": "汤铭萱",
     "source": "psa24打工人",
     "database": "图片",
-    "tags": ["汤铭萱"],
+    "tags": [
+      "汤铭萱"
+    ],
     "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000149.jpg"
   },
   {
@@ -60,7 +74,9 @@
     "author": "沈毅",
     "source": "psa24打工人",
     "database": "图片",
-    "tags": ["沈毅"],
+    "tags": [
+      "沈毅"
+    ],
     "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000154.jpg"
   },
   {
@@ -68,7 +84,9 @@
     "author": "沈毅",
     "source": "psa24打工人",
     "database": "图片",
-    "tags": ["沈毅"],
+    "tags": [
+      "沈毅"
+    ],
     "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000201.jpg"
   },
   {
@@ -76,15 +94,201 @@
     "author": "沈毅,刘子贺",
     "source": "psa24打工人",
     "database": "图片",
-    "tags": ["沈毅","刘子贺"],
-    "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000206.jpg"
+    "tags": [
+      "沈毅",
+      "刘子贺"
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000246.jpg"
+  },
+  {
+    "title": "",
+    "author": "俞仲遥",
+    "source": "psa24打工人",
+    "database": "图片",
+    "tags": [
+      "俞仲遥"
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000213.jpg"
+  },
+  {
+    "title": "",
+    "author": "谢家骏",
+    "source": "psa24打工人",
+    "database": "图片",
+    "tags": [
+      "谢家骏"
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000225.jpg"
+  },
+  {
+    "title": "",
+    "author": "胡张勤",
+    "source": "psa24打工人",
+    "database": "图片",
+    "tags": [
+      "胡张勤"
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000234.jpg"
+  },
+  {
+    "title": "",
+    "author": "刘子贺",
+    "source": "psa24打工人",
+    "database": "图片",
+    "tags": [
+      "刘子贺"
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000240.jpg"
+  },
+  {
+    "title": "",
+    "author": "沈毅",
+    "source": "psa24打工人",
+    "database": "图片",
+    "tags": [
+      "沈毅"
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000255.jpg"
+  },
+  {
+    "title": "",
+    "author": "沈毅",
+    "source": "psa24打工人",
+    "database": "图片",
+    "tags": [
+      "沈毅"
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000303.jpg"
+  },
+  {
+    "title": "",
+    "author": "陈罗成",
+    "source": "psa24打工人",
+    "database": "图片",
+    "tags": [
+      "陈罗成"
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000324.jpg"
+  },
+  {
+    "title": "",
+    "author": "黄琛",
+    "source": "psa24打工人",
+    "database": "图片",
+    "tags": [
+      "黄琛"
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000332.jpg"
+  },
+  {
+    "title": "",
+    "author": "俞仲遥,史致远",
+    "source": "psa24打工人",
+    "database": "图片",
+    "tags": [
+      "俞仲遥",
+      "史致远"
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000338.jpg"
+  },
+  {
+    "title": "",
+    "author": "俞仲遥",
+    "source": "psa24打工人",
+    "database": "图片",
+    "tags": [
+      "俞仲遥"
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000347.jpg"
+  },
+  {
+    "title": "",
+    "author": "史致远",
+    "source": "psa24打工人",
+    "database": "图片",
+    "tags": [
+      "史致远"
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000353.jpg"
+  },
+  {
+    "title": "",
+    "author": "王政皓",
+    "source": "psa24打工人",
+    "database": "图片",
+    "tags": [
+      "王政皓"
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000403.jpg"
+  },
+  {
+    "title": "",
+    "author": "王政皓",
+    "source": "psa24打工人",
+    "database": "图片",
+    "tags": [
+      "王政皓"
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000413.jpg"
+  },
+  {
+    "title": "",
+    "author": "郭浩哲",
+    "source": "psa24打工人",
+    "database": "图片",
+    "tags": [
+      "郭浩哲"
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000408.jpg"
+  },
+  {
+    "title": "",
+    "author": "谢家骏",
+    "source": "psa24打工人",
+    "database": "图片",
+    "tags": [
+      "谢家骏"
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000418.jpg"
+  },
+  {
+    "title": "",
+    "author": "俞仲遥",
+    "source": "psa24打工人",
+    "database": "图片",
+    "tags": [
+      "俞仲遥"
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000423.jpg"
+  },
+  {
+    "title": "",
+    "author": "史致远",
+    "source": "psa24打工人",
+    "database": "图片",
+    "tags": [
+      "史致远"
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000429.jpg"
+  },
+  {
+    "title": "",
+    "author": "沈毅",
+    "source": "psa24打工人",
+    "database": "图片",
+    "tags": [
+      "沈毅"
+    ],
+    "url": "https://cdn.jsdelivr.net/gh/tomas-estudiante/psaki/20260427000440.jpg"
   },
   {
     "title": "会长小课堂1",
     "author": "俞仲遥",
     "source": "psa24打工人",
     "database": "网页",
-    "tags": ["俞仲遥"],
+    "tags": [
+      "俞仲遥"
+    ],
     "url": "https://blog.csdn.net/yzyyylx"
   },
   {
@@ -92,7 +296,29 @@
     "author": "俞仲遥",
     "source": "psa24打工人",
     "database": "网页",
-    "tags": ["俞仲遥"],
+    "tags": [
+      "俞仲遥"
+    ],
     "url": "https://www.bilibili.com/video/BV1v8411x7wH"
+  },
+  {
+    "title": "2025菲尼克斯杯“音梦星河”十大歌手决赛预热及选手介绍",
+    "author": "谢家骏",
+    "source": "psa24打工人",
+    "database": "推文",
+    "tags": [
+      "谢家骏"
+    ],
+    "url": "https://mp.weixin.qq.com/s/CvYk8oJTh14AVkyBa0L_Lg"
+  },
+  {
+    "title": "部门介绍 | 学以自约，习以致远——学习部",
+    "author": "汤铭萱",
+    "source": "psa24打工人",
+    "database": "推文",
+    "tags": [
+      "汤铭萱"
+    ],
+    "url": "https://mp.weixin.qq.com/s/NetuzB665PSR1fYuvErkww"
   }
 ]
